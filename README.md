@@ -1,2 +1,55 @@
 # league-sprites
-Generate a complete image of all League of Legends sprites (champions, items ...).
+Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
+
+## Installation
+
+`npm install league-sprites --save`
+
+## How to use
+
+```javascript
+var Generator = require('league-sprites');
+var spritesGenerator = new Generator({
+  dataType: 'ChampionIcons',
+  apiKey: 'API_KEY',
+  region: 'euw',
+  patch: undefined, // optional
+  stylesheetFormat: 'css',
+  downloadFolder: 'img/',
+  spritePath: 'sprites/sprite.png',
+  stylesheetPath: 'sprites/sprite.css',
+  finalSpritesheetFolder: 'sprites/compressed/'
+});
+
+spritesGenerator.generate()
+  .then(function () {
+    console.log('Done !');
+  })
+  .catch(function (e) {
+    console.error(e);
+  });
+```
+
+## License
+
+MIT License
+
+Copyright (c) 2016 Ilshidur
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
