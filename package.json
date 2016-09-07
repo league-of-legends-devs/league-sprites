@@ -1,6 +1,6 @@
 {
   "name": "league-sprites",
-  "version": "0.0.2-alpha",
+  "version": "0.0.3-alpha",
   "description": "Generate a complete spritesheet of all League of Legends sprites using the Riot API.",
   "main": "lib/index.js",
   "scripts": {
@@ -30,6 +30,7 @@
   "dependencies": {
     "async": "^2.0.1",
     "bluebird": "^3.4.5",
+    "debug": "^2.2.0",
     "graceful-fs": "^4.1.6",
     "imagemin": "^5.2.2",
     "imagemin-pngquant": "^5.0.0",
