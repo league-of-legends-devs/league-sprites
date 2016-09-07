@@ -1,6 +1,7 @@
 import path from 'path';
 import _ from 'lodash';
 import { Client } from 'node-rest-client';
+import debug from './log';
 import config from './config';
 const client = new Client();
 
@@ -12,6 +13,8 @@ function linkAPI (route) {
 function linkSource (url) {
   return config.protocol + '://' + url;
 };
+
+debug('Preparing data requests ...');
 
 const datas = {
   'Champion': linkAPI('static-data/${region}/v1.2/champion'),
@@ -51,12 +54,28 @@ _.keys(client.methods).forEach(method => {
   });
 });
 
+debug('Preparing data requests : done !');
+
 function getDatas (dataName, args = {}) {
-  return client.methods['get' + dataName + 'Async'](args);
+  debug(`Getting ${dataName} datas ...`);
+  let datas;
+  try {
+    datas = client.methods['get' + dataName + 'Async'](args);
+  } catch (e) {
+    debug(`(error) Getting ${dataName} datas : ${e}`);
+  }
+  return datas;
 }
 
 function getImage (sourceName, args) {
-  return client.methods['get' + sourceName + 'Async'](args);
+  debug(`Getting ${sourceName} image ...`);
+  let datas;
+  try {
+    datas = client.methods['get' + sourceName + 'Async'](args);
+  } catch (e) {
+    debug(`(error) Getting ${sourceName} image : ${e}`);
+  }
+  return datas;
 }
 
 export default { getImage, getDatas };

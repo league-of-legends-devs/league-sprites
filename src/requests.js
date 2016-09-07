@@ -1,15 +1,17 @@
 import _ from 'lodash';
+import debug from './log';
 import api from './api';
 
 function getChampionScreenArt ({ region, apiKey }) {
   return new Promise(async (resolve, reject) => {
+    debug('Requesting champions screen arts ...');
     if (!region || !apiKey) {
       reject(new Error('region and api key required.'));
       return;
     }
     try {
       const datas = await api.getDatas('Champion', { path: { 'region': region }, parameters: { 'api_key': apiKey } });
-      console.log(datas.response.statusCode + ' : ' + datas.response.statusMessage);
+      debug('HTTP response code : ' + datas.response.statusCode + ' : ' + datas.response.statusMessage);
       const content = datas.data;
       let champsList = [];
       _.keys(content.data).forEach((champStringId) => {
@@ -25,6 +27,7 @@ function getChampionScreenArt ({ region, apiKey }) {
       }
       resolve(requests);
     } catch (e) {
+      debug(`(error) Requesting champions screen arts : ${e}`);
       reject(e);
     }
   });
@@ -32,13 +35,14 @@ function getChampionScreenArt ({ region, apiKey }) {
 
 function getChampionIcons ({ region, apiKey, requestPatch }) {
   return new Promise(async (resolve, reject) => {
+    debug('Requesting champions icons ...');
     if (!region || !apiKey || !requestPatch) {
       reject(new Error('region, api key and request patch required.'));
       return;
     }
     try {
       const datas = await api.getDatas('Champion', { path: { 'region': region }, parameters: { 'api_key': apiKey } });
-      console.log(datas.response.statusCode + ' : ' + datas.response.statusMessage);
+      debug('HTTP response code : ' + datas.response.statusCode + ' : ' + datas.response.statusMessage);
       const content = datas.data;
       let champsList = [];
       _.keys(content.data).forEach((champStringId) => {
@@ -54,13 +58,14 @@ function getChampionIcons ({ region, apiKey, requestPatch }) {
       }
       resolve(requests);
     } catch (e) {
+      debug(`(error) Requesting champions icons : ${e}`);
       reject(e);
     }
   });
 }
 
 function generateRequests (dataType, args) {
-  console.log(`Requesting '${dataType}' data ...`);
+  debug('HTTP response code : ' + `Requesting '${dataType}' data ...`);
   switch (dataType) {
     case 'ChampionScreenArt':
       return getChampionScreenArt(args);

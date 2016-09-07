@@ -2,9 +2,11 @@ import Promise from 'bluebird';
 import fs from 'graceful-fs';
 import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
+import debug from './log';
 
 function compressImages ({ src = [], out }, pngquantOpts, plugins = []) {
   return new Promise(async (resolve, reject) => {
+    debug('Compressing images ...');
     try {
       // Compress the images
       const files = await imagemin(src, out, {
@@ -33,7 +35,9 @@ function compressImages ({ src = [], out }, pngquantOpts, plugins = []) {
           });
         });
       }
+      debug('Compressing images : done !');
     } catch (e) {
+      debug('(error) Compressing images : ' + e);
       reject(e);
     }
   });

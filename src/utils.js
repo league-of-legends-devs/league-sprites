@@ -2,9 +2,11 @@ import Promise from 'bluebird';
 import fs from 'graceful-fs';
 import path from 'path';
 import async from 'async';
+import debug from './log';
 
 function saveBuffersAsImages (list, folder, getDatasFromItem) {
   return new Promise((resolve, reject) => {
+    debug(`Saving images to ${folder} ...`);
     async.each(list, (image, callback) => {
 
       const buffer = getDatasFromItem(image).buffer;
@@ -26,8 +28,10 @@ function saveBuffersAsImages (list, folder, getDatasFromItem) {
 
     }, (err) => {
       if (err) {
+        debug(`(error) Saving images : ${err}`);
         reject(err);
       } else {
+        debug(`Saving images : done !`);
         resolve();
       }
     });
