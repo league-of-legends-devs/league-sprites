@@ -6,7 +6,7 @@ import debug from './log';
 
 function compressImages ({ src = [], out }, pngquantOpts, plugins = []) {
   return new Promise(async (resolve, reject) => {
-    debug('Compressing images ...');
+    debug(`Compressing images from ${src} to ${out} ...`);
     try {
       // Compress the images
       const files = await imagemin(src, out, {

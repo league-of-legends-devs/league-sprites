@@ -74,7 +74,7 @@ function generateRequests (dataType, args) {
       return getChampionIcons(args);
       break;
     default:
-      throw new Error('Invalid data type.');
+      throw new Error(`Invalid data type : ${dataType}`);
   }
 }
 
