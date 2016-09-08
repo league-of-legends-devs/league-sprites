@@ -65,7 +65,7 @@ function getChampionIcons ({ region, apiKey, requestPatch }) {
 }
 
 function generateRequests (dataType, args) {
-  debug('HTTP response code : ' + `Requesting '${dataType}' data ...`);
+  debug(`Requesting '${dataType}' data ...`);
   switch (dataType) {
     case 'ChampionScreenArt':
       return getChampionScreenArt(args);
