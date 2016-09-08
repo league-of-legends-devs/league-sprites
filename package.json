@@ -4,7 +4,8 @@
   "description": "Generate a complete spritesheet of all League of Legends sprites using the Riot API.",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "build": "gulp",
+    "start": "node lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
