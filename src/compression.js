@@ -1,5 +1,5 @@
 import Promise from 'bluebird';
-import fs from 'graceful-fs';
+import fs from 'fs-extra';
 import imagemin from 'imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import debug from './log';

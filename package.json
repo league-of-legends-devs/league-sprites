@@ -32,7 +32,7 @@
     "async": "^2.0.1",
     "bluebird": "^3.4.5",
     "debug": "^2.2.0",
-    "graceful-fs": "^4.1.6",
+    "fs-extra": "^0.30.0",
     "imagemin": "^5.2.2",
     "imagemin-pngquant": "^5.0.0",
     "lodash": "^4.15.0",

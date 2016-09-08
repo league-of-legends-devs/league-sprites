@@ -1,5 +1,5 @@
 import Promise from 'bluebird';
-import fs from 'graceful-fs';
+import fs from 'fs-extra';
 import path from 'path';
 import async from 'async';
 import debug from './log';
@@ -10,20 +10,27 @@ function saveBuffersAsImages (list, folder, getDatasFromItem) {
     async.each(list, (image, callback) => {
 
       const buffer = getDatasFromItem(image).buffer;
-      fs.open(path.join(folder, getDatasFromItem(image).name) + '.png', 'w', (err, fd) => {
+      const imageName = getDatasFromItem(image).name + '.png';
+
+      fs.ensureDir(folder, (err) => {
         if (err) {
           callback(err);
-        } else {
-          fs.write(fd, buffer, 0, buffer.length, null, (err) => {
-            if (err) {
-              callback(err);
-            } else {
-              fs.close(fd, () => {
-                callback();
-              });
-            }
-          });
         }
+        fs.open(path.join(folder, imageName), 'w', (err, fd) => {
+          if (err) {
+            callback(err);
+          } else {
+            fs.write(fd, buffer, 0, buffer.length, null, (err) => {
+              if (err) {
+                callback(err);
+              } else {
+                fs.close(fd, () => {
+                  callback();
+                });
+              }
+            });
+          }
+        });
       });
 
     }, (err) => {
