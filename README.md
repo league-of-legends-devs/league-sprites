@@ -8,8 +8,8 @@ Generate a complete spritesheet of all League of Legends sprites (champions, ite
 ## How to use
 
 ```javascript
-var Generator = require('league-sprites');
-var spritesGenerator = new Generator({
+var SpriteGenerator = require('league-sprites').Generator;
+var spritesGenerator = new SpriteGenerator({
   dataType: 'ChampionIcons',
   apiKey: 'API_KEY',
   region: 'euw',
