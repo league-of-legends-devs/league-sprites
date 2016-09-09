@@ -57,7 +57,6 @@ _.keys(client.methods).forEach(method => {
 debug('Preparing data requests : done !');
 
 function getDatas (dataName, args = {}) {
-  debug(`Getting ${dataName} datas ...`);
   let datas;
   try {
     datas = client.methods['get' + dataName + 'Async'](args);
@@ -68,7 +67,6 @@ function getDatas (dataName, args = {}) {
 }
 
 function getImage (sourceName, args) {
-  debug(`Getting ${sourceName} image ...`);
   let datas;
   try {
     datas = client.methods['get' + sourceName + 'Async'](args);
