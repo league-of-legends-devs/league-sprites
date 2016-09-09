@@ -17,6 +17,7 @@ class Generator {
     stylesheetFormat = 'css',
     downloadFolder = 'img/',
     spritePath = 'out/sprite.png',
+    spriteLink,
     stylesheetPath = 'out/sprite.css',
     finalSpritesheetFolder = 'out/compressed/'
   }) {
@@ -28,6 +29,7 @@ class Generator {
     this.stylesheetFormat = stylesheetFormat;
     this.downloadFolder = downloadFolder;
     this.spritePath = spritePath;
+    this.spriteLink = spriteLink || spritePath;
     this.stylesheetPath = stylesheetPath;
     this.finalSpritesheetFolder = finalSpritesheetFolder;
     debug('Initializing a new generator : done !');
@@ -56,6 +58,7 @@ class Generator {
         await generateSpriteSheet({
           src: [path.join(self.downloadFolder, self.dataType, '*.png')],
           spritePath: self.spritePath,
+          spriteLink: self.spriteLink,
           stylesheet: self.stylesheetFormat,
           stylesheetPath: self.stylesheetPath
         }, {

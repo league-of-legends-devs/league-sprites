@@ -2,7 +2,7 @@ import Promise from 'bluebird';
 import nsg from 'node-sprite-generator';
 import debug from './log';
 
-function generateSpriteSheet ({ src = [], spritePath, stylesheet = 'css', stylesheetPath }, compositorOptions) {
+function generateSpriteSheet ({ src = [], spritePath, spriteLink, stylesheet = 'css', stylesheetPath }, compositorOptions) {
   return new Promise((resolve, reject) => {
     debug(`Generating sprite sheet from ${src} to ${spritePath} (${stylesheet} : ${stylesheetPath}) ...`);
     try {
@@ -11,6 +11,9 @@ function generateSpriteSheet ({ src = [], spritePath, stylesheet = 'css', styles
         spritePath: spritePath,
         stylesheet: stylesheet,
         stylesheetPath: stylesheetPath,
+        stylesheetOptions: {
+          spritePath: spriteLink
+        },
         layout: 'packed',
         compositorOptions: compositorOptions
       }, function done (err) {
