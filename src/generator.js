@@ -8,6 +8,12 @@ import { saveBuffersAsImages } from './utils';
 import { generateSpriteSheet } from './sprites';
 import { compressImages } from './compression';
 
+// Layout :
+// 'packed': Bin-packing Layout
+// 'vertical': Vertically aligned layout
+// 'horizontal': Horizontally aligned layout
+// 'diagonal': Diagonally aligned layout
+
 class Generator {
   constructor ({
     dataType,
@@ -15,6 +21,7 @@ class Generator {
     region = 'na',
     patch,
     stylesheetFormat = 'css',
+    stylesheetLayout,
     downloadFolder = 'img/',
     spritePath = 'out/sprite.png',
     spriteLink,
@@ -27,6 +34,7 @@ class Generator {
     this.region = region;
     this.patch = patch;
     this.stylesheetFormat = stylesheetFormat;
+    this.stylesheetLayout = stylesheetLayout;
     this.downloadFolder = downloadFolder;
     this.spritePath = spritePath;
     this.spriteLink = spriteLink || spritePath;
@@ -60,6 +68,7 @@ class Generator {
           spritePath: self.spritePath,
           spriteLink: self.spriteLink,
           stylesheet: self.stylesheetFormat,
+          layout: self.stylesheetLayout,
           stylesheetPath: self.stylesheetPath
         }, {
           compressionLevel: 9
