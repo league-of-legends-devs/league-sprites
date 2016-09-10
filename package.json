@@ -1,6 +1,6 @@
 {
   "name": "league-sprites",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Generate a complete spritesheet of all League of Legends sprites using the Riot API.",
   "main": "lib/index.js",
   "scripts": {
