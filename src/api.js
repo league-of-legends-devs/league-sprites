@@ -18,13 +18,9 @@ debug('Preparing data requests ...');
 
 const datas = {
   'Champion': linkAPI('static-data/${region}/v1.2/champion'),
-  'Patch': linkAPI('/static-data/euw/v1.2/versions'),
+  'Item': linkAPI('static-data/${region}/v1.2/item'),
+  'Patch': linkAPI('static-data/${region}/v1.2/versions'),
 };
-
-_.keys(datas).forEach(function (dataName) {
-  client.registerMethod('get' + dataName, datas[dataName], 'GET');
-});
-
 const sources = {
   'ChampionScreenArt': linkSource('ddragon.leagueoflegends.com/cdn/img/champion/loading/${champStringId}_${skinNumber}.jpg'),
   'ChampionIcon': linkSource('ddragon.leagueoflegends.com/cdn/${patch}/img/champion/${champStringId}.png'),
@@ -36,6 +32,9 @@ const sources = {
   'RuneIcon': linkSource('ddragon.leagueoflegends.com/cdn/${patch}/img/rune/${id}.png')
 };
 
+_.keys(datas).forEach(function (dataName) {
+  client.registerMethod('get' + dataName, datas[dataName], 'GET');
+});
 _.keys(sources).forEach(function (sourceName) {
   client.registerMethod('get' + sourceName, sources[sourceName], 'GET');
 });

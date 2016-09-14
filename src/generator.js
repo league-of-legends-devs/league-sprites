@@ -51,8 +51,11 @@ class Generator {
         let requestPatch = self.patch;
         if (!self.patch) {
           debug('No patch version. Requesting ...');
-          let patchData = await api.getDatas('Patch', { parameters: { 'api_key': self.apiKey } });
+          let patchData = await api.getDatas('Patch', { path: { 'region': self.region }, parameters: { 'api_key': self.apiKey } });
           debug(patchData.response.statusCode + ' : ' + patchData.response.statusMessage);
+          if (patchData.response.statusCode != 200) {
+            throw new Error(`Error ${patchData.response.statusCode}`);
+          }
           requestPatch = patchData.data[0];
         }
         debug('Patch version : ' + requestPatch);

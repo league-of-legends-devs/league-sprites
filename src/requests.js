@@ -54,11 +54,42 @@ function getChampionIcons ({ region, apiKey, requestPatch }) {
       champsList = _.sortBy(champsList, 'stringId');
       let requests = [];
       for (let index in champsList) {
-        requests.push(api.getImage('ChampionIcon', { path: { patch: requestPatch, champStringId: champsList[index].stringId}, name: champsList[index].stringId }));
+        requests.push(api.getImage('ChampionIcon', { path: { patch: requestPatch, champStringId: champsList[index].stringId }, name: champsList[index].stringId }));
       }
       resolve(requests);
     } catch (e) {
       debug(`(error) Requesting champions icons : ${e}`);
+      reject(e);
+    }
+  });
+}
+
+function getItemIcons ({ region, apiKey, requestPatch }) {
+  return new Promise(async (resolve, reject) => {
+    debug('Requesting items icons ...');
+    if (!region || !apiKey || !requestPatch) {
+      reject(new Error('region, api key and request patch required.'));
+      return;
+    }
+    try {
+      const datas = await api.getDatas('Item', { path: { 'region': region }, parameters: { 'api_key': apiKey } });
+      debug('HTTP response code : ' + datas.response.statusCode + ' : ' + datas.response.statusMessage);
+      const content = datas.data;
+      let itemsList = [];
+      _.keys(content.data).forEach((itemStringId) => {
+        itemsList.push({
+          stringId: itemStringId,
+          data: content.data[itemStringId]
+        });
+      });
+      itemsList = _.sortBy(itemsList, 'stringId');
+      let requests = [];
+      for (let index in itemsList) {
+        requests.push(api.getImage('ItemIcon', { path: { patch: requestPatch, id: itemsList[index].stringId }, name: itemsList[index].stringId }));
+      }
+      resolve(requests);
+    } catch (e) {
+      debug(`(error) Requesting items icons : ${e}`);
       reject(e);
     }
   });
@@ -72,6 +103,9 @@ function generateRequests (dataType, args) {
       break;
     case 'ChampionIcon':
       return getChampionIcons(args);
+      break;
+    case 'ItemIcon':
+      return getItemIcons(args);
       break;
     default:
       throw new Error(`Invalid data type : ${dataType}`);
