@@ -1,4 +1,4 @@
-# league-sprites
+# league-sprites ([npm link](https://www.npmjs.com/package/league-sprites))
 Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
 
 ## Installation
@@ -10,11 +10,11 @@ Generate a complete spritesheet of all League of Legends sprites (champions, ite
 ```javascript
 var SpriteGenerator = require('league-sprites').Generator;
 var spritesGenerator = new SpriteGenerator({
-  dataType: 'ChampionIcons',
+  dataType: 'ChampionIcons', // accepted values : 'ChampionScreenArt', 'ChampionIcon' and 'ItemIcon'
   apiKey: 'API_KEY',
   region: 'euw',
-  patch: undefined, // optional
-  stylesheetFormat: 'css',
+  patch: undefined, // optional, will be retrived from the API if not provided
+  stylesheetFormat: 'css', // 'css', 'sass', 'less' or 'stylus'
   downloadFolder: 'img/',
   spritePath: 'sprites/sprite.png',
   stylesheetPath: 'sprites/sprite.css',
@@ -29,6 +29,13 @@ spritesGenerator.generate()
     console.error(e);
   });
 ```
+
+This project uses node-sprite-generator and some parameters are directly passed to it. More infos [here](https://github.com/selaux/node-sprite-generator#options).
+
+## TODO
+
+- [ ] Add the sources : `PassiveAbilityIco`, `ChampionAbilityIcon`, `SummonerSpellIcon`, `MasteryIcon` and `RuneIcon`.
+- [ ] Generate datas about the sprites (sprite name, index ...) and pass them through the `Generator.generate().then(callback)` callback function.
 
 ## License
 
