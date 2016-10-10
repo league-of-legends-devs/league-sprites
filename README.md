@@ -5,6 +5,10 @@ Generate a complete spritesheet of all League of Legends sprites (champions, ite
 
 `npm install league-sprites --save`
 
+**REQUIRED** : This project uses [node-canvas](https://github.com/Automattic/node-canvas) (from [node-sprite-generator](https://github.com/selaux/node-sprite-generator)).
+
+Installation instructions [**here**](https://github.com/Automattic/node-canvas/wiki/_pages).
+
 ## How to use
 
 ```javascript
@@ -30,7 +34,7 @@ spritesGenerator.generate()
   });
 ```
 
-This project uses node-sprite-generator and some parameters are directly passed to it. More infos [here](https://github.com/selaux/node-sprite-generator#options).
+As this project uses node-sprite-generator and some parameters are directly passed to it. More infos [here](https://github.com/selaux/node-sprite-generator#options).
 
 ## TODO
 
