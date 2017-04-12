@@ -1,8 +1,11 @@
-# league-sprites ([npm link](https://www.npmjs.com/package/league-sprites))
-Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
+# league-sprites
 
 [![npm](https://img.shields.io/npm/dt/league-sprites.svg)]()
 [![Known Vulnerabilities](https://snyk.io/test/npm/league-sprites/badge.svg)](https://snyk.io/test/npm/league-sprites)
+
+[![NPM](https://nodei.co/npm/league-sprites.png?downloads=true&downloadRank=true)](https://nodei.co/npm/league-sprites)
+
+> Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
 
 ## Installation
 
