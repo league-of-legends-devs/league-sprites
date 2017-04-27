@@ -1,9 +1,12 @@
 # league-sprites
 
-[![npm](https://img.shields.io/npm/dt/league-sprites.svg)]()
-[![Known Vulnerabilities](https://snyk.io/test/npm/league-sprites/badge.svg)](https://snyk.io/test/npm/league-sprites)
+[![npm version][version-badge]][version-url]
+[![Known Vulnerabilities][vulnerabilities-badge]][vulnerabilities-url]
+[![dependency status][dependency-badge]][dependency-url]
+[![devdependency status][devdependency-badge]][devdependency-url]
+[![downloads][downloads-badge]][downloads-url]
 
-[![NPM](https://nodei.co/npm/league-sprites.png?downloads=true&downloadRank=true)](https://nodei.co/npm/league-sprites)
+[![NPM][npm-stats-badge]][npm-stats-url]
 
 > Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
 
@@ -70,3 +73,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[version-badge]: https://img.shields.io/npm/v/league-sprites.svg
+[version-url]: https://www.npmjs.com/package/league-sprites
+[vulnerabilities-badge]: https://snyk.io/test/npm/league-sprites/badge.svg
+[vulnerabilities-url]: https://snyk.io/test/npm/league-sprites
+[dependency-badge]: https://david-dm.org/ilshidur/league-sprites.svg
+[dependency-url]: https://david-dm.org/ilshidur/league-sprites
+[devdependency-badge]: https://david-dm.org/ilshidur/league-sprites/dev-status.svg
+[devdependency-url]: https://david-dm.org/ilshidur/league-sprites#info=devDependencies
+[downloads-badge]: https://img.shields.io/npm/dt/league-sprites.svg
+[downloads-url]: https://www.npmjs.com/package/league-sprites
+[npm-stats-badge]: https://nodei.co/npm/league-sprites.png?downloads=true&downloadRank=true
+[npm-stats-url]: https://nodei.co/npm/league-sprites
