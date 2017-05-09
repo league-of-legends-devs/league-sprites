@@ -1,5 +1,7 @@
 # league-sprites
 
+![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)
+
 [![npm version][version-badge]][version-url]
 [![Known Vulnerabilities][vulnerabilities-badge]][vulnerabilities-url]
 [![dependency status][dependency-badge]][dependency-url]
