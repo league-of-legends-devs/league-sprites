@@ -6,7 +6,9 @@
   "scripts": {
     "build": "gulp",
     "start": "node lib/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,8 @@
     "imagemin-pngquant": "^5.0.0",
     "lodash": "^4.15.0",
     "node-rest-client": "^2.0.1",
-    "node-sprite-generator": "^0.10.2"
+    "node-sprite-generator": "^0.10.2",
+    "snyk": "^1.32.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -54,5 +57,6 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "run-sequence": "^1.2.2"
-  }
+  },
+  "snyk": true
 }
