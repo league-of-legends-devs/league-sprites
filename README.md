@@ -1,5 +1,7 @@
 # league-sprites
 
+> Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
+
 ![stability-unstable](https://img.shields.io/badge/stability-unstable-yellow.svg)
 
 [![npm version][version-badge]][version-url]
@@ -9,8 +11,6 @@
 [![downloads][downloads-badge]][downloads-url]
 
 [![NPM][npm-stats-badge]][npm-stats-url]
-
-> Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
 
 This project uses the Riot API **V2**, which is deprecated. An update is in current development for the V3 API and will be out under the version _0.5.0_.
 
