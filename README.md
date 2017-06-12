@@ -12,6 +12,8 @@
 
 > Generate a complete spritesheet of all League of Legends sprites (champions, items ...) using the Riot API.
 
+This project uses the Riot API **V2**, which is deprecated. An update is in current development for the V3 API and will be out under the version _0.5.0_.
+
 ## Installation
 
 `npm install league-sprites --save`
@@ -25,13 +27,15 @@ Installation instructions [**here**](https://github.com/Automattic/node-canvas/w
 ```javascript
 var SpriteGenerator = require('league-sprites').Generator;
 var spritesGenerator = new SpriteGenerator({
-  dataType: 'ChampionIcons', // accepted values : 'ChampionScreenArt', 'ChampionIcon' and 'ItemIcon'
-  apiKey: 'API_KEY',
+  dataType: 'ChampionIcon', // accepted values : 'ChampionScreenArt', 'ChampionIcon' and 'ItemIcon'
+  apiKey: 'KEY', // Riot API key
   region: 'euw',
   patch: undefined, // optional, will be retrived from the API if not provided
   stylesheetFormat: 'css', // 'css', 'sass', 'less' or 'stylus'
+  stylesheetLayout: 'horizontal',
   downloadFolder: 'img/',
   spritePath: 'sprites/sprite.png',
+  spriteLink: '', // Refer to 'spritePath' at https://github.com/selaux/node-sprite-generator#optionsstylesheetoptions
   stylesheetPath: 'sprites/sprite.css',
   finalSpritesheetFolder: 'sprites/compressed/'
 });
