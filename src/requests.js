@@ -100,13 +100,10 @@ function generateRequests (dataType, args) {
   switch (dataType) {
     case 'ChampionScreenArt':
       return getChampionScreenArt(args);
-      break;
     case 'ChampionIcon':
       return getChampionIcons(args);
-      break;
     case 'ItemIcon':
       return getItemIcons(args);
-      break;
     default:
       throw new Error(`Invalid data type : ${dataType}`);
   }
