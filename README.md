@@ -12,8 +12,6 @@
 
 [![NPM][npm-stats-badge]][npm-stats-url]
 
-This project uses the Riot API **V2**, which is deprecated. An update is in current development for the V3 API and will be out under the version _0.5.0_.
-
 ## Installation
 
 `npm install league-sprites --save`
@@ -37,16 +35,22 @@ var spritesGenerator = new SpriteGenerator({
   spritePath: 'sprites/sprite.png',
   spriteLink: '', // Refer to 'spritePath' at https://github.com/selaux/node-sprite-generator#optionsstylesheetoptions
   stylesheetPath: 'sprites/sprite.css',
-  finalSpritesheetFolder: 'sprites/compressed/'
+  finalSpritesheetFolder: 'sprites/compressed/',
+  prod: false // Set to 'true' if running in a production environment
 });
 
-spritesGenerator.generate()
+spritesGenerator.generate() // Returns a Promise
   .then(function () {
     console.log('Done !');
   })
   .catch(function (e) {
     console.error(e);
   });
+
+// Using the ES7 synthax :
+async function () {
+  await spritesGenerator.generate();
+}();
 ```
 
 As this project uses node-sprite-generator and some parameters are directly passed to it. More infos [here](https://github.com/selaux/node-sprite-generator#options).
@@ -60,7 +64,7 @@ As this project uses node-sprite-generator and some parameters are directly pass
 
 MIT License
 
-Copyright (c) 2016 Ilshidur
+Copyright (c) 2016-2017 **Nicolas COUTIN**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

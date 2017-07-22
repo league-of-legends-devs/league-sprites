@@ -1,3 +1,3 @@
-var Generator = require ('./lib/generator').default;
+var Generator = require('./lib/generator').default;
 
 exports.Generator = Generator;
