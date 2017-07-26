@@ -75,13 +75,14 @@ class Generator {
   }
 
   async _compressImages() {
+    debug('Compressing the sprites !');
     await compressImages({
       src: [this.spritePath],
       out: this.finalSpritesheetFolder,
     }, {
       speed: 1,
     });
-    debug('Compressed images !');
+    debug('Compressed the sprites !');
   }
 
   generate() {
