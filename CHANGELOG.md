@@ -1,5 +1,14 @@
 # league-sprites - change log
 
+# 1.0.1 (Aug. 13th 2017)
+
+## **Minor fixes :**
+
+* Updated dependencies
+* Added change log
+* Enhanced debug messages
+* Documentation : debug mode
+
 # 1.0.0 (July. 10th 2017)
 
 Finally released the 1.0.0 version !
