@@ -55,6 +55,13 @@ async function () {
 
 As this project uses node-sprite-generator and some parameters are directly passed to it. More infos [here](https://github.com/selaux/node-sprite-generator#options).
 
+## Debug mode
+
+To activate debug mode, set the `DEBUG` environment variable to `'league-sprites'`.
+
+e.g. : `DEBUG=league-sprites node app.js`
+(with _app.js_ using _league-sprites_)
+
 ## TODO
 
 - [ ] Add the sources : `PassiveAbilityIco`, `ChampionAbilityIcon`, `SummonerSpellIcon`, `MasteryIcon` and `RuneIcon`.
