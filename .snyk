@@ -11,3 +11,8 @@ patch:
         patched: '2017-06-01T08:40:55.107Z'
     - node-sprite-generator > gm > debug > ms:
         patched: '2017-06-01T08:40:55.107Z'
+  'npm:debug:20170905':
+    - node-rest-client > debug:
+        patched: '2017-09-28T00:39:14.397Z'
+    - node-sprite-generator > gm > debug:
+        patched: '2017-09-28T00:39:14.397Z'
