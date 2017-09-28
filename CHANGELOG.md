@@ -1,5 +1,12 @@
 # league-sprites - change log
 
+# 1.0.2 (Sep. 28th 2017)
+
+## **Minor fixes :**
+
+* Updated dependencies
+* Fixed missing 'canvas' dependency
+
 # 1.0.1 (Aug. 13th 2017)
 
 ## **Minor fixes :**
