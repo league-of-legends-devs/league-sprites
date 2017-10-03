@@ -97,10 +97,10 @@ Anyway, if you earn money on my open source work, I will fucking end you :)
 [version-url]: https://www.npmjs.com/package/league-sprites
 [vulnerabilities-badge]: https://snyk.io/test/npm/league-sprites/badge.svg
 [vulnerabilities-url]: https://snyk.io/test/npm/league-sprites
-[dependency-badge]: https://david-dm.org/ilshidur/league-sprites.svg
-[dependency-url]: https://david-dm.org/ilshidur/league-sprites
-[devdependency-badge]: https://david-dm.org/ilshidur/league-sprites/dev-status.svg
-[devdependency-url]: https://david-dm.org/ilshidur/league-sprites#info=devDependencies
+[dependency-badge]: https://david-dm.org/league-of-legends-devs/league-sprites.svg
+[dependency-url]: https://david-dm.org/league-of-legends-devs/league-sprites
+[devdependency-badge]: https://david-dm.org/league-of-legends-devs/league-sprites/dev-status.svg
+[devdependency-url]: https://david-dm.org/league-of-legends-devs/league-sprites#info=devDependencies
 [downloads-badge]: https://img.shields.io/npm/dt/league-sprites.svg
 [downloads-url]: https://www.npmjs.com/package/league-sprites
 [npm-stats-badge]: https://nodei.co/npm/league-sprites.png?downloads=true&downloadRank=true
