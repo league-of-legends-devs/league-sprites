@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ilshidur/league-sprites.git"
+    "url": "git+https://github.com/league-of-legends-devs/league-sprites.git"
   },
   "keywords": [
     "league",
@@ -26,9 +26,9 @@
   "author": "Ilshidur <ilshidur@gmail.com> (https://www.nicolas-coutin.fr)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Ilshidur/league-sprites/issues"
+    "url": "https://github.com/league-of-legends-devs/league-sprites/issues"
   },
-  "homepage": "https://github.com/Ilshidur/league-sprites#readme",
+  "homepage": "https://github.com/league-of-legends-devs/league-sprites#readme",
   "dependencies": {
     "async": "^2.5.0",
     "bluebird": "^3.5.0",
