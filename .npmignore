@@ -1,9 +1,14 @@
 .github/
+node_modules/
 src/
 test/
-node_modules/
 .babelrc
 .editorconfig
-.eslintrc
+.eslint*
+.gitignore
 .jscsrc
+.snyk
+CHANGELOG.md
 gulpfile*
+LICENSE
+README.md
