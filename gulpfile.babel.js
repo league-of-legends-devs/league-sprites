@@ -7,8 +7,7 @@ import del from 'del';
 gulp.task('clean', () =>
   del([
     'lib',
-  ]),
-);
+  ]));
 
 gulp.task('lint', () =>
   gulp
@@ -19,8 +18,7 @@ gulp.task('lint', () =>
     ])
     .pipe(eslint())
     .pipe(eslint.format('node_modules/eslint-formatter-pretty'))
-    .pipe(eslint.failAfterError()),
-);
+    .pipe(eslint.failAfterError()));
 
 gulp.task('build', () =>
   gulp
@@ -29,8 +27,7 @@ gulp.task('build', () =>
       presets: ['env', 'stage-0'],
       plugins: ['transform-runtime'],
     }))
-    .pipe(gulp.dest('lib')),
-);
+    .pipe(gulp.dest('lib')));
 
 gulp.task('default', (callback) => {
   runSequence(
