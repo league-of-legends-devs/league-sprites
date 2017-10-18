@@ -71,7 +71,6 @@ class Generator {
     }, {
       compressionLevel: 9,
     });
-    debug('Sprite generated !');
   }
 
   async _compressImages() {
