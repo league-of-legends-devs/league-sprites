@@ -9,7 +9,14 @@ import path from 'path';
 
 import debug from './log';
 
-function generateSpriteSheet({ src = [], spritePath, spriteLink, stylesheet = 'css', layout = 'packed', stylesheetPath }, compositorOptions) {
+function generateSpriteSheet({
+  src = [],
+  spritePath,
+  spriteLink,
+  stylesheet = 'css',
+  layout = 'packed',
+  stylesheetPath,
+}, compositorOptions) {
   return new Promise((resolve, reject) => {
     debug(`Generating sprite sheet from ${src} to ${spritePath} (${stylesheet} : ${stylesheetPath}) ...`);
     try {
@@ -44,7 +51,7 @@ function saveBuffersAsImages(list, folder, getDatasFromItem) {
     debug(`Saving images to ${folder} ...`);
     async.each(list, (image, callback) => {
       const imageDatas = getDatasFromItem(image);
-      const buffer = imageDatas.buffer;
+      const { buffer } = imageDatas;
       const imageName = `${imageDatas.name}.png`;
 
       fs.ensureDir(folder, (err) => { // TODO: Use Promise-based fs calls
