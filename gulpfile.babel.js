@@ -26,7 +26,7 @@ gulp.task('build', () =>
   gulp
     .src('src/**/*.js')
     .pipe(babel({
-      presets: ['es2015'],
+      presets: ['env', 'stage-0'],
       plugins: ['transform-runtime'],
     }))
     .pipe(gulp.dest('lib')),
