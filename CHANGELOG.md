@@ -1,5 +1,12 @@
 # league-sprites - change log
 
+# 1.0.3 (Oct. 18th 2017)
+
+## **Minor fixes :**
+
+* Updated dependencies
+* Migrated to Babel preset 'env'
+
 # 1.0.2 (Sep. 28th 2017)
 
 ## **Minor fixes :**
