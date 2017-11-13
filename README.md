@@ -53,6 +53,8 @@ async function () {
 }();
 ```
 
+[Used in production by _feeder.lol-item-sets-generator.org_](https://github.com/league-of-legends-devs/feeder.lol-item-sets-generator.org/blob/master/src/routes/sprites.js)
+
 As this project uses node-sprite-generator and some parameters are directly passed to it. More infos [here](https://github.com/selaux/node-sprite-generator#options).
 
 ## Debug mode
