@@ -37,9 +37,9 @@
     "debug": "^3.1.0",
     "fs-extra": "^4.0.2",
     "imagemin": "^5.3.1",
-    "imagemin-pngquant": "^5.0.1",
+    "imagemin-pngquant": "^5.1.0",
     "kindred-api": "^2.0.83",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.5",
     "node-rest-client": "^3.1.0",
     "node-sprite-generator": "^0.10.2",
     "snyk": "^1.88.1"
