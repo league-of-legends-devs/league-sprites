@@ -33,7 +33,7 @@
   "dependencies": {
     "async": "^2.5.0",
     "bluebird": "^3.5.1",
-    "canvas": "^1.6.7",
+    "canvas": "^1.6.10",
     "debug": "^3.1.0",
     "fs-extra": "^4.0.2",
     "imagemin": "^5.3.1",
