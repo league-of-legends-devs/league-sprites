@@ -42,7 +42,7 @@
     "lodash": "^4.17.5",
     "node-rest-client": "^3.1.0",
     "node-sprite-generator": "^0.10.2",
-    "snyk": "^1.88.1"
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
